@@ -38,7 +38,9 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">My first Lara site
+                <div><a href="/tasks">All tasks</a></div>
+                </div>
             </div>
         </div>
     </body>
