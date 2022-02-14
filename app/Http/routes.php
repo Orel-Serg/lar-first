@@ -42,6 +42,11 @@ Route::post('/tasks', function (\Illuminate\Http\Request $request) {
     return redirect(route('tasks.index'));
 })->name('tasks.store');
 
-Route::delete('/tasks/{tasks}', function (){
-    echo 'delete task';
-});
+Route::delete('/tasks/{tasks}',function(\App\Models\Task $task){
+    $task->delete();
+    return redirect(route('tasks.index'));
+})->name('tasks.delete');
+
+Route::get('/tasks/{tasks}',function(\App\Models\Task $task){
+    return view('tasks.create');
+})->name('tasks.edit');

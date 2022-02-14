@@ -28,7 +28,20 @@
                         </td>
 
                         <td>
+                            <!-- TODO: Кнопка Редактивировать -->
+                            <form method="get" action="{{route('tasks.edit', $task->id)}}">
+                                {{method_field('get')}}
+                                {{csrf_field()}}
+                                <button class="btn btn-warning"><i class="fa fa-pencil" style="font-size:14px"></i></button>
+                            </form>
                             <!-- TODO: Кнопка Удалить -->
+                           <form method="post" action="{{route('tasks.delete', $task->id)}}">
+                               {{method_field('delete')}}
+                               {{csrf_field()}}
+
+                               <button class="btn btn-danger"><i class="fa fa-trash-o" style="font-size:14px"></i></button>
+                           </form>
+
                         </td>
                     </tr>
                 @endforeach
